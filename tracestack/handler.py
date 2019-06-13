@@ -69,7 +69,7 @@ class ExceptionHandler(object):
 
 def _get_ipython_handler(*args, **kwargs):
     handler = ExceptionHandler(*args, **kwargs)
-    def handle_ipython(shell, etype, value, tb, tb_offset=None):
+    def handle_ipython(shell, etype, evalue, tb, tb_offset=None):
         shell.showtraceback((etype, evalue, tb), tb_offset=tb_offset)
         handler.handle_error(etype, evalue, tb)
     return handle_ipython
